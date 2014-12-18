@@ -55,6 +55,7 @@ class IpGeoBase extends Component
 
         $ipDataArray = $resArr + ['ip' => $ip];
 
+
         if ($asArray) {
             return $ipDataArray;
         } else {
@@ -165,7 +166,6 @@ class IpGeoBase extends Component
         $uniqueRegions = [];
         $regionId = 1;
         foreach ($citiesArray as $city) {
-
             $row = explode("\t", $city);
             $country =  iconv('WINDOWS-1251', 'UTF-8', $row[3]);
             if(preg_match('/'.self::UK_NAME.'/', $country)){
